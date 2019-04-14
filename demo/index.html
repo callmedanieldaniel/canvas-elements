@@ -40,14 +40,14 @@
         // });
 
         let line = v.line([
-            [85, 86],
-            [85, 89],
-            [85, 104],
-            [139, 85],
-            [197, 85],
-            [224, 85],
-            [10, 10],
-            [400, 10],
+            [85, 186],
+            [85, 189],
+            [85, 204],
+            [139, 185],
+            [197, 185],
+            [224, 185],
+            [10, 110],
+            [200, 110],
         ], {
             strokeStyle: '#4df693',
             lineWidth: 10,
@@ -89,7 +89,7 @@
             // console.log(obj)
         })
 
-        v.circle(10, [200, 100], {
+        v.circle(10, [250, 100], {
             fillStyle: 'yellow',
             strokeStyle: 'skyblue',
             lineWidth: 5,
@@ -153,44 +153,44 @@
             lineCap: 'round',
             boundaryCheck: true
         });
-        v.text('Edit disable polygon', [650, 80], {
+        v.text('不能编辑的矩形', [650, 80], {
             textAlign: 'center'
         });
 
         // Edit disable line
         v.line([
-            [650, 100],
-            [600, 150],
+            [680, 100],
+            [650, 150],
             [700, 150]
         ], {
             pointEditable: false
         });
-        v.text('我是', [650, 180], {
+        v.text('上面的角可以改变偶', [650, 180], {
             // textAlign: 'center',
-            // textRotate: Math.PI * (-0.5),
-            rotate: Math.PI * .5,
+            textRotate: Math.PI * (0.1),
+            rotate: Math.PI * .0,
             boundaryCheck: true
         });
 
         // Edit disable line
-        window.tg = v.textGroup('我是一个中国人', [400, 260], {
+        window.tg = v.textGroup('每个元素都可以拖拽，拖一下试试吧', [200, 30], {
             // textRotate: Math.PI * .5,
             // rotate: Math.PI * .5,
-            fontSize: 18,
+            fontSize: 20,
             boundaryCheck: true
         });
 
         // Edit disable line
-        v.textGroup('你是一个中国人', [
-            [400, 220],
-            [412, 220],
-            [424, 220],
-            [436, 220],
-            [448, 220],
-            [460, 220],
-            [472, 220]
+        v.textGroup('每个字位置可控', [
+            [500, 220],
+            [520, 240],
+            [540, 220],
+            [560, 260],
+            [580, 220],
+            [600, 240],
+            [620, 220]
         ], {
-            textRotate: Math.PI * .5,
+            textRotate: Math.PI * .1,
             fontSize: 18,
             boundaryCheck: true
         });
@@ -204,7 +204,7 @@
         })
 
         // Edit disable line
-        v.text('polygn with boundaryCheck', [660, 350], {
+        v.text('上面的三角形定点可以拖', [660, 350], {
             textAlign: 'center',
             boundaryCheck: true
         });
@@ -259,7 +259,7 @@
         // drawArcLine();
         drawArcLineByStartEndPoint();
 
-        function drawArcLineByStartEndPoint(start = [40, 300], end = [140, 300]) {
+        function drawArcLineByStartEndPoint(start = [540, 480], end = [640, 480]) {
             let args = caculateArcLine(start, end);
             console.log('drawArcLineByStartEndPoint');
             console.log(...args);

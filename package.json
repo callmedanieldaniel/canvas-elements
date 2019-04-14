@@ -1,5 +1,5 @@
 {
-  "name": "visual",
+  "name": "canvas-elements",
   "version": "1.0.1",
   "description": "the basic tools for javascript visualiztion",
   "main": "index.js",
@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/huiyan-fe/visual.git"
+    "url": "git+https://github.com/danieltao1993/canvas-elements.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/huiyan-fe/visual/issues"
+    "url": "https://github.com/danieltao1993/canvas-elements/issues"
   },
-  "homepage": "https://github.com/huiyan-fe/visual#readme",
+  "homepage": "https://github.com/danieltao1993/canvas-elements#readme",
   "devDependencies": {
     "babel-core": "^6.18.2",
     "babel-loader": "^6.2.8",

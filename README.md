@@ -4,7 +4,7 @@
 
 欢迎来到Visual的世界，Visual是一款基于canvas的可视化**底层工具**，支持点、线、面、文字多边形的拖拽，选取等操作。
 
-可以通过简单的Demo了解什么是Visual [Visual Demo](https://danieltao1993.github.io/visual/demo/index.v.1.0.1.html)
+可以通过简单的Demo了解什么是Visual [Visual Demo](https://danieltao1993.github.io/canvas-elements/demo/index.html)
 
 
 ## API
@@ -40,9 +40,6 @@
 let dom = document.getElementById('content');
 let visual = new Visual(dom);
 ```
-
-[在线Demo](https://jsfiddle.net/zhuwenlong/5011tco8/4/)
-
 
 ### 1.1 Visual Options
 |参数|类型|说明|
@@ -122,8 +119,6 @@ visua.textGroup('TextGroup with path points', [
 	textRotate: Math.PI * .1
 });
 ```
-
-[在线Demo](https://jsfiddle.net/zhuwenlong/kfotkcj4/1/)
 
 #### 2.4 circle(redis, center, config)
 
@@ -206,8 +201,6 @@ cir.on('change', (obj) => {
 |:---|:---|:---|:---|
 |object|Visual Object| - |当前移动的对象
 
-[在线Demo](https://jsfiddle.net/zhuwenlong/qnjqL9my/)
-
 #### 3.1.1 change for line[Object]
 
 line类型的change事件返回以下参数:
@@ -236,8 +229,6 @@ line类型的change事件返回以下参数:
 |:---|:---|:---|:---|
 |object|Visual Object| - |当前移动的对象
 |index|Number| - | 当前准备删除的点对应的索引号
-
-[在线Demo(首尾点不能被删除)](https://jsfiddle.net/zhuwenlong/rpomufsb/1/)
 
 ### 4. visual Properties
  用户可以通过设置Visual 的实例（line/circle...）的属性，控制实例是否可以拖拽
