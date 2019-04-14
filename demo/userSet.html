@@ -1,0 +1,135 @@
+<html>
+
+<head>
+    <title>Demo of visual</title>
+    <meta charset="utf-8" />
+    <style>
+        #content {
+            margin-top: 60px;
+        }
+    </style>
+    <script src="../dist/visual.1.0.1.js"></script>
+    <script src="libs/stats.min.js"></script>
+</head>
+
+<body>
+    <div id="content" style="width:500px; height: 500px; border:1px solid #ccc;"></div>
+    <script>
+        let dom = document.getElementById('content');
+        let v = new Visual(dom, {
+            grid: {
+                step: 1,
+                scale: [1, 1]
+            }
+        });
+
+        const userSet1 = {
+            dragable: true,
+            clickable: true,
+            bufferSize: 20,
+            mouseOverEventEnable: false,
+            active: true
+        };
+        window.v = v;
+        window.l = v.line([
+            [110, 0],
+            [110, 100],
+        ],
+            {
+                strokeStyle: '#4df693',
+                lineWidth: 8,
+                dragable: true,
+                clickable: true,
+                bufferSize: 20,
+                mouseOverEventEnable: false,
+                active: true
+            }
+        );
+        l.on('finish', (data) => {
+            console.log('p finish');
+            console.log(l.Visual.sys.pickupedObjs);
+            console.log(data);
+            l.setPath(
+                [[100, 100],
+                [150, 150],
+                [250, 250]]
+            );
+        })
+
+        // l.active();
+
+        window.t = v.text('Hello Canvas', [200, 400], {
+            fontSize: 24,
+            rotate: Math.PI * .25,
+            // splitText: true,
+            textRotate: Math.PI * .50
+        }, userSet1);
+
+        window.t.on('finish', (...arg) => {
+            console.log('xxx', arg)
+            p.active();
+        })
+
+        window.c = v.circle(10, [200, 100], {
+            fillStyle: 'yellow',
+            // strokeStyle: 'skyblue',
+            lineWidth: 5,
+            border: true
+        }, {
+                dragable: true,
+                clickable: true,
+                bufferSize: 1,
+                // active:true
+            });
+
+        window.p = v.polygon([
+            [300, 100],
+            [250, 150],
+            [250, 250],
+            [350, 150],
+            [350, 250]
+        ], {
+                border: true,
+                fill: false,
+                lineJoin: 'round',
+                lineCap: 'round',
+                dragable: true,
+                // clickable: false,
+                mouseOverEventEnable: true,
+                bufferSize:5,
+                active: true
+            })
+        window.p.on('finish', (data) => {
+            console.log('p finish');
+            console.log(window.l.Visual.sys.pickupedObjs);
+            console.log(data);
+
+        })
+
+        window.tg = v.textGroup('我是一个中国人', [400, 260], {
+            textRotate: Math.PI * .5,
+            // rotate: Math.PI * .5,
+            fontSize: 18,
+            boundaryCheck: true
+        });
+        window.tg.on('finish', (data) => {
+            console.log('textGroup finish');
+            console.log(window.tg.Visual.sys.pickupedObjs);
+            console.log(data);
+        })
+
+
+    </script>
+
+
+    <script>
+        var stats = new Stats();
+        document.body.appendChild(stats.dom);
+        requestAnimationFrame(function loop() {
+            stats.update();
+            requestAnimationFrame(loop)
+        });
+    </script>
+</body>
+
+</html>
